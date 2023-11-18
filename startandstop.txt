@@ -1,0 +1,10 @@
+#start
+nginx -c /sdcard/nginx/nginx.conf
+#stop
+nginx -c /sdcard/nginx/nginx.conf -s stop
+
+#if need php
+apt install php php-fpm
+cat ../usr/etc/php-fpm.d/www.conf |grep "listen = "
+##then, edit nginx.conf and run php-fpm
+php-fpm
